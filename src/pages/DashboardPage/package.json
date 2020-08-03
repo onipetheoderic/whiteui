@@ -1,0 +1,8 @@
+{
+    "name": "dashboardscreen",
+    "version": "0.0.1",
+    "private": true,
+    "description": "The Dashboard Page",
+    "author": "Theoderic Onipe",
+    "main": "DashboardPage.js"
+}

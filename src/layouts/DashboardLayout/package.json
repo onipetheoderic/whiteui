@@ -1,0 +1,8 @@
+{
+    "name": "dashboardlayout",
+    "version": "0.0.1",
+    "private": true,
+    "description": "This is the Dashboard Layout Screen, we made use of React.Children to accept the layout page",
+    "author": "Theoderic Onipe",
+    "main": "DashboardLayout.js"
+}
