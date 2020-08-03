@@ -1,0 +1,8 @@
+{
+    "name": "loginscreen",
+    "version": "0.0.1",
+    "private": true,
+    "description": "The Login Page",
+    "author": "Theoderic Onipe",
+    "main": "LoginPage.js"
+}

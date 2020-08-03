@@ -1,0 +1,8 @@
+{
+    "name": "textinput",
+    "version": "0.0.1",
+    "private": true,
+    "description": "This is the label text component",
+    "author": "Theoderic Onipe",
+    "main": "TextInput.js"
+}

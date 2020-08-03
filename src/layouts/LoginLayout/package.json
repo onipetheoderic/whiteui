@@ -1,0 +1,8 @@
+{
+    "name": "loginlayout",
+    "version": "0.0.1",
+    "private": true,
+    "description": "This is the Layout Screen, we made use of React.Children to accept the layout page",
+    "author": "Theoderic Onipe",
+    "main": "LoginLayout.js"
+}

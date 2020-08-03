@@ -1,0 +1,8 @@
+{
+    "name": "verticalspacer",
+    "version": "0.0.1",
+    "private": true,
+    "description": "This is to add spacing to the top and bottom of a component",
+    "author": "Theoderic Onipe",
+    "main": "VerticalSpacer.js"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "socialbutton",
+    "version": "0.0.1",
+    "private": true,
+    "description": "This package accepts the following enumerated values as iconName facebook, twitter and google, any other name would be regarded as google",
+    "author": "Theoderic Onipe",
+    "main": "SocialButton.js"
+}

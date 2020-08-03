@@ -1,0 +1,8 @@
+{
+    "name": "verticalcentertext",
+    "version": "0.0.1",
+    "private": true,
+    "description": "this is the text that would be align vertically",
+    "author": "Theoderic Onipe",
+    "main": "VerticalCenterText.js"
+}
