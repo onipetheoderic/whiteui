@@ -1,0 +1,8 @@
+{
+    "name": "table",
+    "version": "0.0.1",
+    "private": true,
+    "description": "The Table component",
+    "author": "Theoderic Onipe",
+    "main": "Table.js"
+}

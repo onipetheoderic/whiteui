@@ -1,0 +1,8 @@
+{
+    "name": "latestcard",
+    "version": "0.0.1",
+    "private": true,
+    "description": "This is the latest card component",
+    "author": "Theoderic Onipe",
+    "main": "LatestCard.js"
+}

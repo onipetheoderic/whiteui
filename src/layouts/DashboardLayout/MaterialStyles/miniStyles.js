@@ -25,20 +25,19 @@ justify-content:space-aroud;
 
 export const NavTwoContainer = styled.div`
   background-color:white;
-  width:27%; 
+  width:23%; 
   -webkit-box-shadow: 2px 9px 26px -15px rgba(48,38,48,0.15);
 -moz-box-shadow: 2px 9px 26px -15px rgba(48,38,48,0.15);
 box-shadow: 2px 9px 26px -15px rgba(48,38,48,0.15);
 `
 
 export const NavThreeContainer = styled.div`
-  width:65%; 
+  width:70%; 
   background-color:#E5E5E5;
 `
 
 export const VerticalSection = styled.div`
   width: 100%; 
-  height: 100%; 
   backgroundColor: white;
 `
 

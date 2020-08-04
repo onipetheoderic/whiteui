@@ -7,17 +7,41 @@ export const useStyles = makeStyles((theme) => ({
       backgroundColor:'#E5E5E5'
     },
     navOneContainer: {
-      width:'7%', 
+      width:'6%', 
       backgroundColor:'white',
       borderRight:'1px solid #F0F0F3'
     },
     navTwoContainer: {
-      width:'27%', 
+      width:'26%', 
       backgroundColor:'white',
       borderRight:'1px solid #F0F0F3'
     },
+    logoTextBold: {
+      fontSize: 26,
+      fontWeight:'700',
+      fontFamily: 'Lato'
+    },
+    logoTextRegular: {
+      fontSize: 22,
+      fontWeight: '400',
+      fontFamily: 'Lato'
+    },
+    latestTextBold: {
+      marginTop:50,
+      fontSize: 16,
+      color: '#1C1D21',
+      fontWeight: '700',
+      fontFamily: 'Lato'
+    },
+    imageContainer: {
+      marginTop:100,
+      marginLeft:30
+    },
     bgImage: {
       alignSelf:'center'
+    },
+    bgLogo: {
+     width:'100%'
     },
     iconStyleDashboard: {
       alignItems:'center'
@@ -39,6 +63,32 @@ export const useStyles = makeStyles((theme) => ({
       border:'1px solid blue'
       
     },
+    dashChartContainer: {
+      display:'flex',
+      flexWrap: 'wrap',
+      marginTop: 30,
+      width:'32%',
+      borderRadius: 6,
+      backgroundColor:'white',
+      height: 400,
+    },
+    mainChartContainer: {
+      display:'flex',
+      flexWrap: 'wrap',
+      marginTop: 30,
+      width:'66%',
+      borderRadius: 6,
+      backgroundColor:'white',
+      height: 400
+    },
+    boxContainer: {
+      display:'flex',
+      flexWrap: 'wrap',
+      justifyContent:'space-between',
+      marginLeft:30,
+      marginTop: 30,
+      width:'96.5%',
+    },
     boxOutline: {
       borderRight: '2px solid #5E81F4',
       borderRadius:1,
@@ -48,7 +98,7 @@ export const useStyles = makeStyles((theme) => ({
     iconsContainer:{
       display:'flex',
       flexWrap:'wrap',
-      height:'100%',
+      height:'70%',
       marginTop:50
     },
     logoContainer: {

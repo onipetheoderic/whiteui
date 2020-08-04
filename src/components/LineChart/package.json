@@ -1,0 +1,8 @@
+{
+    "name": "linechartcomponent",
+    "version": "0.0.1",
+    "private": true,
+    "description": "The Line Chart",
+    "author": "Theoderic Onipe",
+    "main": "LineChart.js"
+}

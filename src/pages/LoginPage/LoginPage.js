@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {     
     Box,
     RadioGroup,
@@ -7,13 +7,14 @@ import {
     Avatar,
     FormControl,
    } from '@material-ui/core';
+import { useForm } from "react-hook-form"
+
 
 import LoginLayout from "../../layouts/LoginLayout";
 import HeaderComponent from "../../components/HeaderComponent";
 import VerticalSpacer from "../../components/VerticalSpacer";
 import LabelText from "../../components/LabelText";
 import TextInput from "../../components/TextInput";
-
 import Button from "../../components/Button";
 import SocialButton from '../../components/SocialButton';
 import VerticalCenterText from "../../components/VerticalCenterText";
@@ -24,7 +25,8 @@ import { theme } from "./theme";
 import bgImage from "../../assets/images/mobileBg.png";
 import vectorBg from "../../assets/images/VectorBg.png";
 import logo from "../../assets/images/Logo.png"
-
+import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+import { doLogin } from "../../ApiService/apiService"
 
 const useStyles = makeStyles((theme) => ({
     onlyMobile: {
@@ -73,15 +75,24 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function LoginPage() {
-
-    const [value, setValue] = React.useState('female');
-
-    const handleChange = (event) => {
-        setValue(event.target.value);
-    };
-
+    const [ email, setEmail ] = useState("")
+    const [ password, setPassword ] = useState("")
     const classes = useStyles();
 
+  
+
+    const handleSubmit = () => {
+       let formData = new FormData();
+       formData.append('email', email);
+       formData.append('password', password);
+       doLogin(formData).then((data)=> {
+           console.log("response",data)
+       })
+
+    }
+
+
+    
   return (
     
         <LoginLayout>
@@ -101,35 +112,47 @@ export default function LoginPage() {
                 />            
             </Box>
             <Box className={classes.onlyMobileForm}>
-            <VerticalSpacer mobileOnly={true} topSpace={100} bottomSpace={10} mobileTopSpace={0} mobileTopPadding={20} mobileBottomSpace={10}>
-            <TextInput theme={theme} name="email" title="Full name" placeholder="John.doe@gmail.com"/>
-            </VerticalSpacer>
-            <VerticalSpacer topSpace={100} bottomSpace={10} mobileTopSpace={0} mobileTopPadding={20} mobileBottomSpace={10}>
-            <TextInput theme={theme} name="email" title="Email" placeholder="John.doe@gmail.com"/>
-            </VerticalSpacer>
-            <VerticalSpacer topSpace={50} bottomSpace={10} mobileTopSpace={0} mobileTopPadding={20} mobileBottomSpace={10}>
-            <TextInput theme={theme} name="password" title="Password" placeholder="Start Typing..."/>
-            </VerticalSpacer>
-            <FormControl component="fieldset" className={classes.desktopOnly}>
-                <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-                    <FormControlLabel value="female" control={<Radio />} label="Remember Me" />
-                </RadioGroup>
-            </FormControl>
+            <ValidatorForm
+                UseRef="form"
+                onSubmit={handleSubmit}
+                onError={errors => console.log(errors)}
+            >
+                <VerticalSpacer mobileOnly={true} topSpace={100} bottomSpace={10} mobileTopSpace={0} mobileTopPadding={20} mobileBottomSpace={10}>
+                    <TextInput  theme={theme} value={email} name="email" title="Full name" placeholder="John.doe@gmail.com"/>
+                </VerticalSpacer>
+                <VerticalSpacer topSpace={100} bottomSpace={10} mobileTopSpace={0} mobileTopPadding={20} mobileBottomSpace={10}>
+                    <TextInput
+                    theme={theme} value={email} type="text"
+                    handleChange={e => setEmail(e.target.value)} name="email" 
+                    title="Email" placeholder="John.doe@gmail.com"/>
+                </VerticalSpacer>
+                <VerticalSpacer topSpace={50} bottomSpace={10} mobileTopSpace={0} mobileTopPadding={20} mobileBottomSpace={10}>
+                    <TextInput 
+                     theme={theme} value={password} type="password"  handleChange={e => setPassword(e.target.value)}
+                      name="password" title="Password" placeholder="Start Typing..."/>
+                </VerticalSpacer>
+                <FormControl component="fieldset" className={classes.desktopOnly}>
+                    <RadioGroup aria-label="gender" name="gender1">
+                        <FormControlLabel value="female" control={<Radio />} label="Remember Me" />
+                    </RadioGroup>
+                </FormControl>
 
-            <VerticalSpacer topSpace={50} bottomSpace={10}>
-            <ButtonsContainer>
-                <Button title="Sign In" active={true} /> 
-                <Button title="Sign Up" active={false} />
-            </ButtonsContainer>
-            </VerticalSpacer>
-            <VerticalSpacer topSpace={50} bottomSpace={10}>
-            <SocialIconContainer>               
-                <SocialButton iconName="twitter" />
-                <SocialButton iconName="facebook" />
-                <SocialButton iconName="google" />
-                <VerticalCenterText title="Or sign in with"/>    
-            </SocialIconContainer>
-            </VerticalSpacer>
+                <VerticalSpacer topSpace={50} bottomSpace={10}>
+                <ButtonsContainer>
+                    <Button title="Sign In" active={true} /> 
+                    <Button title="Sign Up" active={false} />
+                </ButtonsContainer>
+                </VerticalSpacer>
+                <VerticalSpacer topSpace={50} bottomSpace={10}>
+                <SocialIconContainer>               
+                    <SocialButton iconName="twitter" />
+                    <SocialButton iconName="facebook" />
+                    <SocialButton iconName="google" />
+                    <VerticalCenterText title="Or sign in with"/>    
+                </SocialIconContainer>
+                </VerticalSpacer>
+            </ValidatorForm>
+            
             </Box>
         </LoginLayout>  
      
